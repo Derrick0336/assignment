@@ -1,33 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct Node {
     int data;
     struct Node* next;
 } Node;
-
 Node* createNode(int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
 Node* addTwoNumbers(Node* list1, Node* list2) {
     Node *result = NULL, *tail = NULL;
     int carry = 0;
-
     while (list1 || list2 || carry) {
         int sum = carry + (list1 ? list1->data : 0) + (list2 ? list2->data : 0);
         carry = sum / 10;
         Node* newNode = createNode(sum % 10);
-
         if (!result) result = tail = newNode;
         else {
             tail->next = newNode;
             tail = newNode;
         }
-
         if (list1) list1 = list1->next;
         if (list2) list2 = list2->next;
     }
