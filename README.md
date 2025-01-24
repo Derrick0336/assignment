@@ -1,3 +1,8 @@
+DERRICK KUNGU IRUNGU
+SCT222-0336/2023
+
+
+
 for assignment 3 here is a description of the values i used
 
 
